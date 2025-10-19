@@ -1,0 +1,55 @@
+name: EsHesapEsle
+version: '1.0-SNAPSHOT'
+main: com.eshesapesle.EsHesapEsle
+api-version: '1.13'
+authors: [Livany]
+description: Discord hesap eşleştirme sistemi
+website: https://discord.gg/livany
+softdepend: [PlaceholderAPI]
+depend: [PlaceholderAPI]
+
+commands:
+  linkdiscord:
+    description: Discord hesabınızı Minecraft hesabınızla eşleştirin
+    usage: /linkdiscord
+    permission: eshesapesle.link
+  discord:
+    description: Discord hesap eşleştirme komutları
+    usage: /discord <eşle|sil>
+    aliases: [dc]
+  profilim:
+    description: Discord profil bilgilerinizi görüntüler
+    usage: /profilim
+  esh:
+    description: Admin komutları
+    usage: /esh <reload|info|unlink>
+    permission: esh.admin
+  hesapesle:
+    description: Discord hesabınızı Minecraft hesabınızla eşleştirmenizi sağlar.
+    usage: /hesapesle <discord-id>
+    aliases: [linkaccount, accountlink]
+  öneri:
+    description: Öneri sistemi komutları
+    usage: /<command> [gönder|liste]
+    aliases: [oneri]
+  status:
+    description: Status panel yönetim komutları
+    usage: /status [reload|update|info]
+    permission: esh.admin
+
+permissions:
+  eshesapesle.link:
+    description: Discord hesabını eşleştirme izni
+    default: true
+  eshesapesle.discord:
+    description: Discord komutlarını kullanma izni
+    default: true
+  eshesapesle.profil:
+    description: Discord profilini görüntüleme izni
+    default: true
+  eshesapesle.oneri:
+    description: Öneri gönderme ve görüntüleme izni
+    default: true
+  esh.admin:
+    description: Admin komutlarına erişim izni
+    default: op 

@@ -1,0 +1,72 @@
+suggestions:
+  disabled: "\u274C Öneri sistemi şu anda devre dışı!"
+  channel-not-found: "\u274C Öneri kanalı bulunamadı! Lütfen yetkililere bildirin."
+  channel-not-set: "\u274C Öneri kanalı ayarlanmamış! Lütfen yetkililere bildirin."
+  success: "\u2714 Öneriniz başarıyla gönderildi!"
+  follow-discord: "Discord'dan önerinizin durumunu takip edebilirsiniz."
+  error: "\u274C Bir hata oluştu! Lütfen daha sonra tekrar deneyin."
+  analysis:
+    title: "\U0001F4CA Öneri Analizi:"
+    category: "➤ {emoji} Kategori: {category}"
+    score: "➤ {emoji} Puan: {score}/100"
+  embed:
+    title: "{emoji} Yeni Öneri (Minecraft)"
+    analysis-title: "\U0001F4CA Analiz Sonuçları"
+    analysis-content: "{score_emoji} Puan: {score}/100\n\U0001F3F7 Kategori: {category_emoji} {category}\n\U0001F4DD Özet: {summary}"
+    author: "Öneri Sahibi"
+    footer: "Öneri ID: {id}"
+  log:
+    title: "\U0001F4E5 Yeni Öneri Geldi (Minecraft)"
+    author: "Öneri Sahibi"
+    category: "Kategori"
+    score: "Puan"
+  buttons:
+    approve: "\u2705 Onayla"
+    reject: "\u274C Reddet"
+    implement: "\u26A1 Uygulandı"
+    consider: "\U0001F914 Değerlendiriliyor"
+  status:
+    approved: "\u2705 Onaylandı"
+    rejected: "\u274C Reddedildi"
+    implemented: "\u26A1 Uygulandı"
+    considering: "\U0001F914 Değerlendiriliyor"
+    updated-by: "Güncelleyen: {user}"
+  commands:
+    no-permission: "\u274C Bu komutu kullanma yetkiniz yok!"
+    not-found: "\u274C Belirtilen ID'ye sahip öneri bulunamadı!"
+    status-updated: "\u2705 Öneri durumu güncellendi: {status}"
+    invalid-status: "\u274C Geçersiz durum!"
+    deleted: "\u2705 Öneri başarıyla silindi!"
+    cleared: "\u2705 {count} öneri başarıyla silindi!"
+    no-suggestions: "\u274C Bu kriterlere uygun öneri bulunamadı!"
+
+minecraft:
+  prefix: "&8[&bEsHesapEsle&8]"
+  commands:
+    discord:
+      link:
+        usage: "&cKullanım: /discord eşle"
+        already-linked: "&cHesabınız zaten Discord ile eşleştirilmiş!"
+        code-generated: "&aEşleştirme kodunuz: &e{code}"
+        code-expires: "&7Bu kod 5 dakika içinde sona erecek."
+        how-to-use: "&7Discord'da &e/hesapesle &7komutunu kullanarak hesabınızı eşleştirebilirsiniz."
+      unlink:
+        success: "&aHesabınızın Discord eşleştirmesi başarıyla kaldırıldı!"
+        not-linked: "&cHesabınız henüz Discord ile eşleştirilmemiş!"
+      reload:
+        no-permission: "&cBu komutu kullanmak için yetkiniz yok!"
+        success: "&aPlugin başarıyla yeniden yüklendi!"
+    suggestion:
+      usage: "&cKullanım: /oneri <öneriniz>"
+      too-short: "&cÖneriniz çok kısa! En az 10 karakter olmalı."
+      too_long: "&cÖneriniz çok uzun! En fazla 1000 karakter olabilir."
+      cooldown: "&cYeni bir öneri göndermek için &e{time} saniye &cbeklemelisiniz!"
+  link:
+    success: "&aHesabınız başarıyla Discord ile eşleştirildi!"
+    failed: "&cHesap eşleştirme başarısız oldu! Lütfen daha sonra tekrar deneyin."
+    code-expired: "&cKodunuzun süresi doldu! Yeni bir kod almak için /discord eşle komutunu kullanın."
+  errors:
+    no-permission: "&cBu komutu kullanmak için yetkiniz yok!"
+    player-only: "&cBu komut sadece oyuncular tarafından kullanılabilir!"
+    not-found: "&cOyuncu bulunamadı: &e{player}"
+    invalid-code: "&cGeçersiz kod! Lütfen doğru kodu girdiğinizden emin olun." 

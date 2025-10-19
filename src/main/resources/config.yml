@@ -1,0 +1,215 @@
+# ===== EsHesapEsle Plugin Konfigürasyonu =====
+# Geliştirici: Hermes/Livany
+# Discord: https://discord.gg/magicrise
+
+# Dil ayarı (tr veya en)
+language: "tr"
+
+# Depolama seçenekleri
+storage:
+  type: yaml  # Sadece yaml desteklenir
+
+# Discord Bot Ayarları
+discord:
+  # Bot token'ınızı buraya yazın (Discord Developer Portal'dan alın)
+  bot-token: ""
+  
+  # Discord sunucu ID'nizi buraya yazın
+  guild-id: ""
+  
+  # Hesap eşleştirme kanalı ID'si
+  link-channel-id: ""
+  
+
+  
+  # Canlı Durum Paneli
+  status-panel:
+    enabled: true                           # Status paneli aktif/pasif
+    channel-id: ""                          # Status panelinin gösterileceği kanal ID'si
+    server-name: "MagicRise Network"        # Embed'de gösterilecek sunucu adı
+    server-ip: "play.magicrise.net"         # Sunucu IP adresi
+    update-interval: 60                     # Güncelleme sıklığı (saniye, minimum 10)
+  
+  # Bot Aktivite Ayarları
+  activity:
+    update-interval: 60                     # Aktivite güncelleme süresi (saniye)
+    status: online                          # Bot durumu (online, idle, dnd, invisible)
+    type: playing                           # Aktivite tipi (playing, watching, streaming, listening)
+    message: "%linked_accounts% hesap eşleştirildi"  # Aktivite mesajı
+  
+  # Rol Ayarları
+  roller:
+    EslendiRolID: ""                        # Eşleştirilmiş hesaplar için rol ID
+    Yetkiler:                               # Yetki bazlı roller
+      discord.mvip+: ""
+      discord.mvip: ""
+      discord.vip+: ""
+      discord.vip: ""
+  
+  # Ödül Sistemi
+  reward:
+    enabled: false                          # Ödül sistemi aktif/pasif
+    channel-id: ""                          # Ödül duyuru kanalı
+    rewards:                                # Verilecek ödüller
+      - "give %player% diamond 1"
+      - "give %player% emerald 1"
+      - "give %player% gold_ingot 5"
+  
+  # Ticket Sistemi (İsteğe bağlı)
+  ticket:
+    enabled: false                          # Ticket sistemi aktif/pasif
+    category-id: ""                         # Ticket kategorisi ID'si
+    ticket-channel: ""                      # Ticket oluşturma kanalı
+    log-channel: ""                         # Ticket log kanalı
+    support-role: ""                        # Destek ekibi rolü
+    max-tickets: 1                          # Kullanıcı başına maksimum ticket
+    require-linked-account: true            # Hesap eşleştirme zorunluluğu
+  
+  # Komut Kontrol Sistemi
+  komut-kontrol:
+    kanal-id: ""                            # Komutların kullanılacağı kanal
+    yetkili-roller:                         # Komut kullanabilecek roller
+      - ""
+    izinli-komutlar:                        # İzin verilen komutlar
+      - "ban"
+      - "kick"
+      - "mute"
+  
+  # Log Sistemi
+  server_chat_logs:
+    status: false                           # Chat logları aktif/pasif
+    joinQuitLogStatus: false                # Giriş/çıkış logları
+    logChannel: ""                          # Log kanalı
+
+# Mail Rapor Sistemi
+mail-reports:
+  enabled: true                             # Mail rapor sistemi aktif/pasif
+  recipient-email: "info@magicrise.net"      # Raporların gönderileceği e-posta adresi
+  interval-hours: 1                         # Rapor gönderme aralığı (saat)
+  smtp:
+    host: "mail.magicrise.net"              # SMTP sunucu adresi
+    port: 587                               # SMTP port (STARTTLS için 587)
+    username: "info@magicrise.net"          # SMTP kullanıcı adı (e-posta adresiniz)
+    password: "Altug3478!!"                 # SMTP şifre (e-posta şifren)
+    auth: true                              # SMTP kimlik doğrulama
+    tls: true                               # TLS şifreleme (STARTTLS)
+    ssl: false                              # SSL şifreleme
+
+# Öneri Sistemi
+oneri:
+  aktif: true                               # Öneri sistemi aktif/pasif
+  kanal-id: ""                              # Öneri kanalı ID'si
+  log-kanal-id: ""                          # Öneri log kanalı (opsiyonel)
+  en-iyi-oneri-rol-id: ""                   # En iyi öneri rolü (opsiyonel)
+  min-oy-en-iyi-oneri: 10                   # En iyi öneri için gereken oy
+
+# Bakım Modu Sistemi
+maintenance:
+  enabled: false                            # Bakım modu aktif/pasif
+  whitelist: []                             # Bakım sırasında girebilecek oyuncular
+  estimated-time: "1-2 saat"               # Tahmini bakım süresi
+  discord-link: "https://discord.gg/example"  # Discord davet linki
+  website-link: "https://example.com"      # Website linki
+
+# Otomatik Güncelleme Sistemi
+updater:
+  auto-check: true                          # Otomatik güncelleme kontrolü
+  auto-update: false                        # Otomatik güncelleme (dikkatli kullanın!)
+  check-interval-hours: 6                   # Kontrol aralığı (saat)
+  download-url: "https://api.github.com/repos/YOUR_USERNAME/EsHesapEsle/releases/latest"
+  version-check-url: "https://api.github.com/repos/YOUR_USERNAME/EsHesapEsle/releases/latest"
+  start-command: "start.bat"                # Sunucu başlatma komutu
+
+# Mesajlar
+messages:
+  code-expired: "§cKodunuzun süresi doldu! Yeni bir kod almak için /discord eşle komutunu kullanın."
+  already-linked: "§cHesabınız zaten Discord ile eşleştirilmiş!"
+  not-linked: "§cHesabınız henüz Discord ile eşleştirilmemiş!"
+  link-success: "§aHesabınız başarıyla Discord ile eşleştirildi!"
+  link-failed: "§cHesap eşleştirme başarısız oldu! Lütfen daha sonra tekrar deneyin."
+  unlink-success: "§aHesabınızın Discord eşleştirmesi başarıyla kaldırıldı!"
+  command:
+    no-permission: "§cBu komutu kullanma yetkiniz yok!"
+    wrong-channel: "§c❌ Bu komut sadece yetkili kanalında kullanılabilir!"
+    success: "§aKomut başarıyla yürütüldü: {command}"
+    error: "§cKomut yürütülürken hata oluştu: {error}"
+    not-allowed: "§cBu komutun kullanımına izin verilmiyor!"
+
+# ===== KURULUM REHBERİ =====
+#
+# 1. Discord Bot Token Alma:
+#    - https://discord.com/developers/applications adresine gidin
+#    - "New Application" tıklayın
+#    - "Bot" sekmesine gidin, "Add Bot" tıklayın
+#    - Token'ı kopyalayın ve yukarıdaki "bot-token" kısmına yapıştırın
+#
+# 2. Kanal ID'leri Alma:
+#    - Discord'da geliştirici modunu açın
+#    - İstediğiniz kanala sağ tıklayın → "Copy Channel ID"
+#    - İlgili config kısmına yapıştırın
+#
+# 3. Spotify API Kurulumu (Müzik Sistemi için):
+#    - https://developer.spotify.com/dashboard adresine gidin
+#    - "Create an App" tıklayın
+#    - App adı ve açıklama girin
+#    - "Client ID" ve "Client Secret"ı kopyalayın
+#    - Config'deki "spotify" kısmına yapıştırın
+#    - Çalmak istediğiniz playlist'in URL'sini "playlist-url" kısmına yazın
+#
+# 2. Guild ID Alma:
+#    - Discord'da geliştirici modunu açın
+#    - Sunucunuza sağ tıklayın → "Copy Server ID"
+#    - "guild-id" kısmına yapıştırın
+#
+# 3. Kanal ID'leri Alma:
+#    - İstediğiniz kanala sağ tıklayın → "Copy Channel ID"
+#    - İlgili config kısmına yapıştırın
+#
+# 4. Status Panel Kurulumu:
+#    - Discord'da #sunucu-durum gibi bir kanal oluşturun
+#    - Kanal ID'sini "status-panel.channel-id" kısmına yazın
+#    - "server-name" ve "server-ip" kısımlarını düzenleyin
+#
+# 5. Mail Rapor Sistemi Kurulumu:
+#    - Gmail kullanıyorsanız 2FA'yı aktif edin
+#    - App Password oluşturun: https://myaccount.google.com/apppasswords
+#    - "mail-reports.smtp.username" kısmına Gmail adresinizi yazın
+#    - "mail-reports.smtp.password" kısmına App Password'ü yazın
+#    - "mail-reports.recipient-email" kısmına raporların gönderileceği e-postayı yazın
+#    - "mail-reports.enabled" kısmını true yapın
+#
+# 6. Plugin'i yeniden başlatın veya /discord reload komutunu kullanın
+#
+# ===== KOMUTLAR =====
+#
+# Oyuncu Komutları:
+# /discord eşle     - Hesap eşleştirme kodu alır
+# /discord sil      - Hesap eşleştirmesini kaldırır
+# /öneri gönder     - Yeni öneri gönderir
+#
+# Admin Komutları:
+# /esh reload       - Plugin'i yeniden yükler
+# /esh mail send    - Manuel mail raporu gönderir
+# /esh mail reload  - Mail sistemini yeniden başlatır
+# /esh mail status  - Mail sistemi durumunu gösterir
+# /status reload    - Status paneli yeniden başlatır
+# /status update    - Status paneli manuel günceller
+# /status info      - Status panel bilgilerini gösterir
+#
+# Discord Slash Komutları:
+# /hesapesle        - Minecraft hesabını eşleştir
+# /discord reload   - Bot konfigürasyonunu yenile
+# /oneri istatistik - Öneri sistemi istatistikleri
+#
+# Müzik Komutları:
+# /status music info    - Müzik sistemi bilgilerini göster
+# /status music start   - Müzik sistemini başlat
+# /status music stop    - Müzik sistemini durdur
+# /status music reload  - Müzik sistemini yeniden yükle
+#
+# ===== DESTEK =====
+#
+# Sorun yaşıyorsanız:
+# - Console loglarını kontrol edin
+# - /status info komutunu çalıştırın
+# - Discord: https://discord.gg/magicrise
